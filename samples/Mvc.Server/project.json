@@ -1,0 +1,79 @@
+{
+  "compilationOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "preserveCompilationContext": true
+  },
+
+  "dependencies": {
+    "AspNet.Security.OAuth.GitHub": "1.0.0-alpha4-*",
+    "AspNet.Security.OAuth.Introspection": "1.0.0-alpha1-*",
+    "AspNet.Security.OAuth.Validation": "1.0.0-alpha1-*",
+    "Microsoft.AspNetCore.Authentication.Google": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.Authentication.Twitter": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.Diagnostics": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.IISPlatformHandler": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.Mvc": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0-rc2-*",
+    "Microsoft.AspNetCore.StaticFiles": "1.0.0-rc2-*",
+    "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0-rc2-*",
+    "Microsoft.Extensions.Configuration.CommandLine": "1.0.0-rc2-*",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0-rc2-*",
+	"Microsoft.Extensions.Configuration.Json": "1.0.0-rc2-*",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-rc2-*",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-*",
+    "OpenIddict": "1.0.0-*"
+  },
+
+  "frameworks": {
+    "net451": {
+      "frameworkAssemblies": {
+        "System.ComponentModel": { "type": "build" }
+      }
+    },
+
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": { "type": "platform", "version": "1.0.0-rc2-3002543" }
+      },
+
+      "imports": [
+        "dnxcore50",
+        "portable-net451+win8"
+      ]
+    }
+  },
+
+  "tools": {
+    "Microsoft.AspNetCore.Server.IISIntegration.Tools": {
+      "version": "1.0.0-*",
+      "imports": "portable-net45+wp80+win8+wpa81+dnxcore50"
+    }
+  },
+
+  "scripts": {
+    "postpublish": "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+  },
+
+  "content": [
+    "wwwroot",
+    "Views",
+    "config.json",
+    "web.config"
+  ],
+
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ],
+
+  "publishExclude": [
+    "node_modules",
+    "bower_components",
+    "**.xproj",
+    "**.user",
+    "**.vspscc"
+  ]
+}
